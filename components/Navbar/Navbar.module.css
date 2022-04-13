@@ -1,93 +1,91 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap");
 
 .main {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    /* background-color: red; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+  /* background-color: red; */
 }
 .main h1 {
-    font-family: 'Kalam', cursive;
-    margin: 1rem;
+  font-family: "Kalam", cursive;
+  margin: 1rem;
 }
 .innersec {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .innersec > * {
-    margin: 2rem;
-    cursor: pointer;
+  margin: 2rem;
+  cursor: pointer;
 }
 
 .innersec p {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
 .innersec button {
-    font-size: 1.1rem;
-    padding: .7rem;
-    border-radius: 2rem;
-    border: 0px solid white;
-    background-color: #fdb90b;
-    color: white;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    box-shadow: 2.5px 4px 3px 2px #fdb80b59;
-    transition: all .2s ease-in-out;
-    font-weight: 500;
+  font-size: 1.1rem;
+  padding: 0.7rem;
+  border-radius: 2rem;
+  border: 0px solid white;
+  background-color: #fdb90b;
+  color: white;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  box-shadow: 2.5px 4px 3px 2px #fdb80b59;
+  transition: all 0.2s ease-in-out;
+  font-weight: 500;
 }
 
 .innersec button:active {
-   transform: translateY(10px);
-   transform: scale(.9);
-   box-shadow: 1px 2px 1px 1px #fdb80b59;
+  transform: translateY(10px);
+  transform: scale(0.9);
+  box-shadow: 1px 2px 1px 1px #fdb80b59;
 }
 
 .hamburger {
-     display: none;
+  display: none;
 }
 
-
-
 @media (max-width: 900px) {
-   .Navbar {
-       backdrop-filter: blur(10px);
-       display: flex;
-       flex-direction: row;
-       justify-content: space-between;
-       align-items: center;
-       width: 100%;
-   }
-    .innersec {
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        flex-direction: column;
-        background-color: #f0edffce;
-        justify-content: center;
-        align-items: center;
-        z-index: 1;
-        align-items: center;
-        top: 0;
-        margin-top: 5rem;
-        backdrop-filter: blur(10px);
-        border-top-right-radius: 1rem;
-    }
-    .hamburger {
-        display: block;
-        background-color: #f2f2f2;
-        transition: all 1s ease-in-out;
-        font-size: 2rem;
-        margin: 1rem;
-        padding: .3rem;
-        border-radius: .7rem;
-        cursor: pointer;
-    }
-  
+  .Navbar {
+    background-color: #f0edffce;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  .innersec {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    background-color: #f0edffce;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    align-items: center;
+    top: 0;
+    margin-top: 5rem;
+    backdrop-filter: blur(10px);
+    border-top-right-radius: 1rem;
+  }
+  .hamburger {
+    display: block;
+    background-color: #f2f2f2;
+    transition: all 1s ease-in-out;
+    font-size: 2rem;
+    margin: 1rem;
+    padding: 0.3rem;
+    border-radius: 0.7rem;
+    cursor: pointer;
+  }
 }

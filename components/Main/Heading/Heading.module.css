@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@700&family=Rubik+Microbe&display=swap');
+
+.main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.first, .second {
+    width: 50%;
+    height: 100%;
+    /* background-color: red; */
+    text-align: center;
+}
+
+.first h2{
+    font-size: 4rem;
+    font-weight: 600;
+    font-family: 'Kalam', cursive;
+    font-family: 'Rubik Microbe', cursive;
+}
+
+.first p {
+    color: #828ca2;
+    font-size: 1.5rem;
+}
+
+.second {
+    background:  url('/back.svg') ;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.first button {
+    font-size: 1.1rem;
+    padding: 0.7rem;
+    border-radius: 2rem;
+    border: 0px solid white;
+    background-color: #fdb90b;
+    color: white;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    box-shadow: 2.5px 4px 3px 2px #fdb80b59;
+    transition: all 0.2s ease-in-out;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  .first button:active {
+    transform: translateY(10px);
+    transform: scale(0.9);
+    box-shadow: 1px 2px 1px 1px #fdb80b59;
+  }
+
+  .second .image {
+      z-index: 1;
+  }
+  
+
+
+
+@media (max-width: 1000px) {
+    .main {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .first , .second {
+        width: 100%;
+    }
+}
