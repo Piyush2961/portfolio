@@ -26,7 +26,13 @@
 }
 
 .innersec p {
-  font-size: 1rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: all .3s;
+}
+
+.innersec p:hover {
+  color: #ffa70c;
 }
 
 .innersec button {
