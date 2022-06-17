@@ -25,6 +25,7 @@
 .first p {
     color: #828ca2;
     font-size: 1.5rem;
+    margin: 2rem;
 }
 
 .second {
@@ -112,9 +113,11 @@
       .hack {
           left: 0%;
           font-size: 10rem !important;
+          margin-left: 1rem;
       }
       .tagupright {
             right: 0%;
+            margin-right: 1rem;
       }
   }
 
@@ -125,6 +128,9 @@
         justify-content: center;
         align-items: center;
     }
+    .first {
+        margin-bottom: 5rem;
+    }
     .first , .second {
         width: 100%;
     }
@@ -132,16 +138,18 @@
 
 @media (max-width: 650px) {
     .hack {
-        min-width: 5.5rem;
+        min-width: 7rem;
         min-height: 3rem;
         border-radius: .7rem;
         left: 0;
+        margin-left: .5rem;
     }
     .tagupright {
-        min-width: 5.5rem;
+        min-width: 7rem;
         min-height: 3rem;
         border-radius: .7rem;
         right: 0;
+        margin-right: .5rem;
     }
     .hack div:first-child , .tagupright div:first-child {
         display: none;
