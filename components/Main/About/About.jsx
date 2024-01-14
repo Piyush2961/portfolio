@@ -5,18 +5,27 @@ import styles from "./About.module.css";
 const About = () => {
   return (
     <div className={styles.main}>
-      <h1>About <span style={{ color: "red" }}>Me</span> </h1>
+      {/* About me  */}
+      <h1>
+        About <span style={{ color: "red" }}>Me</span>{" "}
+      </h1>
       <p>
-        I'm a FULL Stack (MERN) Web Developer. Currently I am working on Java
-        Springboot. I'm a Pre - Final Year Student pursuing B.E. (Bachelor of
-        Engineering).
+        Greetings! I'm Piyush Kumar, a passionate Software Development Engineer
+        (SDE) currently contributing my skills and expertise to the dynamic
+        world of payments technology at Majid Al Futtaim.
       </p>
+
+      {/* Professional Joourney  */}
+      {/* <h1>Professional Journey </h1>
       <p>
-        Most recent Experience is that currently I'm working as an SDE intern at
-        MAF - Carrefour. Previously I have worked with StockPe and Admere
-        Selvyn.
-      </p>
-      <p>I am very enthusiastic and ready to explore and learn with the advancement of Technology.</p>
+        My journey in the realm of software development has been nothing short
+        of exhilarating. I've had the privilege of being part of innovative
+        teams that drive technological excellence. My current role at Majid Al
+        Futtaim has honed my abilities as an SDE, where I play a pivotal role in
+        crafting and enhancing systems within the payments landscape. It's an
+        exciting space where every day brings new challenges and opportunities
+        for growth.
+      </p> */}
     </div>
   );
 };

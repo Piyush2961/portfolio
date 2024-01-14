@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap"); */
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bungee+Spice&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 .main {
   display: flex;
@@ -7,10 +8,12 @@
   justify-content: space-between;
   align-items: center;
   z-index: 2;
-  /* background-color: red; */
 }
 .main h1 {
-  font-family: "Kalam", cursive;
+  /* font-family: "Kalam", cursive; */
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
   margin: 1rem;
 }
 .innersec {
@@ -29,6 +32,10 @@
   font-size: 1.1rem;
   font-weight: 500;
   transition: all .3s;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  cursor: pointer;
 }
 
 .innersec p:hover {
@@ -40,13 +47,16 @@
   padding: 0.7rem;
   border-radius: 2rem;
   border: 0px solid white;
-  background-color: #fdb90b;
+  background-color: #946b01;
   color: white;
   padding-left: 2rem;
   padding-right: 2rem;
   box-shadow: 2.5px 4px 3px 2px #fdb80b59;
   transition: all 0.2s ease-in-out;
   font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 .innersec button:active {
@@ -61,7 +71,7 @@
 
 @media (max-width: 900px) {
   .Navbar {
-    background-color: #f0edffce;
+    background-color: #1D2021CF;
     backdrop-filter: blur(10px);
     display: flex;
     flex-direction: row;
@@ -74,7 +84,7 @@
     width: 100%;
     height: 100%;
     flex-direction: column;
-    background-color: #f0edffce;
+    background-color: #1D2021CF;
     justify-content: center;
     align-items: center;
     z-index: 1;
@@ -86,7 +96,7 @@
   }
   .hamburger {
     display: block;
-    background-color: #f2f2f2;
+    background-color: #1D2021CF;
     transition: all 1s ease-in-out;
     font-size: 2rem;
     margin: 1rem;

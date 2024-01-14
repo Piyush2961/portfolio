@@ -67,7 +67,7 @@ const Navbar = () => {
       <div className={styles.main}>
         <div className={styles.Navbar}>
           <h1>
-            Piyush.<span style={{ color: "red" }}>{write}</span>
+            piyush.<span style={{ color: "red" }}>{write}</span>
           </h1>
 
           <div className={styles.hamburger}>

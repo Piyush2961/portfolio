@@ -1,165 +1,185 @@
-@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@700&family=Rubik+Microbe&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bungee+Spice&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 .main {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.first, .second {
-    width: 50%;
-    height: 100%;
-    /* background-color: red; */
-    text-align: center;
+.first,
+.second {
+  width: 50%;
+  height: 100%;
+  /* background-color: red; */
+  text-align: center;
 }
 
-.first h2{
-    font-size: 4rem;
-    font-weight: 600;
-    font-family: 'Kalam', cursive;
-    font-family: 'Rubik Microbe', cursive;
+.first h2 {
+  font-size: 4rem;
+  font-weight: 800;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  /* color: #fffff7 !important; */
 }
 
 .first p {
-    color: #828ca2;
-    font-size: 1.5rem;
-    margin: 2rem;
+  color: #828ca2;
+  font-size: 1.5rem;
+  margin: 2rem;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 .second {
-    background:  url('/back.svg') ;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
+  /* background-color: black; */
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.myImageDiv {
+  clip-path: circle(30% at 50% 50%);
+}
+
+.WaveAnimation {
+    z-index: 2;
 }
 
 .first button {
-    font-size: 1.1rem;
-    padding: 0.7rem;
-    border-radius: 2rem;
-    border: 0px solid white;
-    background-color: #fdb90b;
-    color: white;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    box-shadow: 2.5px 4px 3px 2px #fdb80b59;
-    transition: all 0.2s ease-in-out;
-    font-weight: 500;
-    cursor: pointer;
-  }
-  
-  .first button:active {
-    transform: translateY(10px);
-    transform: scale(0.9);
-    box-shadow: 1px 2px 1px 1px #fdb80b59;
-  }
+  font-size: 1.1rem;
+  padding: 0.7rem;
+  border-radius: 2rem;
+  border: 0px solid white;
+  background-color: #946b01;
+  color: white;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  box-shadow: 2.5px 4px 3px 2px #fdb80b59;
+  transition: all 0.2s ease-in-out;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
 
-  .second {
-      position: relative;
-  }
-  
+.first button:active {
+  transform: translateY(10px);
+  transform: scale(0.9);
+  box-shadow: 1px 2px 1px 1px #fdb80b59;
+}
+
+.second {
+  position: relative;
+}
+
+.hack {
+  width: 22%;
+  height: 10%;
+  min-width: 10rem;
+  min-height: 5rem;
+  background-color: #181d1d;
+  position: absolute;
+  bottom: 7%;
+  left: 8%;
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0.7rem;
+}
+.hack div:first-child {
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hackbenchers,
+.stockpe {
+  font-weight: 600;
+}
+
+.tagupright {
+  width: 22%;
+  height: 10%;
+  min-width: 10rem;
+  min-height: 5rem;
+  background-color: #181d1d;
+  position: absolute;
+  top: 7%;
+  right: 8%;
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1rem;
+}
+
+.hackerearth {
+  background-color: #181d1d;
+}
+
+.experienced {
+    background-color: #9a783a;
+}
+
+@media (max-width: 1350px) {
   .hack {
-        width: 22%;
-        height: 10%;
-        min-width: 10rem;
-        min-height: 5rem;
-        background-color: #f3f7f8;
-        position: absolute;
-        bottom: 7%;
-        left: 8%;
-        border-radius: 1.5rem;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        align-items: center;
-        padding: .7rem;
+    left: 0%;
+    font-size: 10rem !important;
+    margin-left: 1rem;
   }
-  .hack div:first-child {
-      height: 2rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-  }
-  .hackbenchers , .stockpe{
-      font-weight: 600;
-  }
-
-  
   .tagupright {
-        width: 22%;
-        height: 10%;
-        min-width: 10rem;
-        min-height: 5rem;
-        background-color: #f3f7f8;
-        position: absolute;
-        top: 7%;
-        right: 8%;
-        border-radius: 1.5rem;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        align-items: center;
-        padding: 1rem;
+    right: 0%;
+    margin-right: 1rem;
   }
-
-  .hackerearth {
-    background-color: #fff8ea;
-    
-  }
-
-  @media (max-width: 1350px) {
-      .hack {
-          left: 0%;
-          font-size: 10rem !important;
-          margin-left: 1rem;
-      }
-      .tagupright {
-            right: 0%;
-            margin-right: 1rem;
-      }
-  }
-
+}
 
 @media (max-width: 1150px) {
-    .main {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    .first {
-        margin-bottom: 5rem;
-    }
-    .first , .second {
-        width: 100%;
-    }
+  .main {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .first {
+    margin-bottom: 5rem;
+  }
+  .first,
+  .second {
+    width: 100%;
+  }
 }
 
 @media (max-width: 650px) {
-    .hack {
-        min-width: 7rem;
-        min-height: 3rem;
-        border-radius: .7rem;
-        left: 0;
-        margin-left: .5rem;
-    }
-    .tagupright {
-        min-width: 7rem;
-        min-height: 3rem;
-        border-radius: .7rem;
-        right: 0;
-        margin-right: .5rem;
-    }
-    .hack div:first-child , .tagupright div:first-child {
-        display: none;
-    }
+  .hack {
+    min-width: 7rem;
+    min-height: 3rem;
+    border-radius: 0.7rem;
+    left: 0;
+    margin-left: 0.5rem;
+  }
+  .tagupright {
+    min-width: 7rem;
+    min-height: 3rem;
+    border-radius: 0.7rem;
+    right: 0;
+    margin-right: 0.5rem;
+  }
+  .hack div:first-child,
+  .tagupright div:first-child {
+    display: none;
+  }
 }
 
 @media (max-width: 600px) {
-
-    .hack , .tagupright {
-        font-size: .5rem;
-    }
-    
+  .hack,
+  .tagupright {
+    font-size: 0.5rem;
+  }
 }
