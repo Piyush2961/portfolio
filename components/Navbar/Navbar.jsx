@@ -11,7 +11,7 @@ const Navbar = () => {
     "techy ",
     "web ",
     "developer ",
-    "competitive ",
+    // "competitive ",
     "coder ",
   ];
   const [write, setWrite] = useState();
