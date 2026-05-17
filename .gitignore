@@ -30,3 +30,8 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# agents
+.agents/
+.gemini/
+skills-lock.json

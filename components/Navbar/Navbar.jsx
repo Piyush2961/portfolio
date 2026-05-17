@@ -1,93 +1,110 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Navbar.module.css";
-import { RiMenu4Line } from "react-icons/ri";
-import { CgClose } from "react-icons/cg";
-import Radium, { StyleRoot } from "radium";
+import { RiMenuLine, RiCloseLine, RiCompassLine } from "react-icons/ri";
 
 const Navbar = () => {
-  const [closeMenu, setCloseMenu] = useState(true);
-  const data = [
-    "Kumar ",
-    "techy ",
-    "web ",
-    "developer ",
-    // "competitive ",
-    "coder ",
-  ];
-  const [write, setWrite] = useState();
-  // let write = "";
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  const delay = async (ms) =>
-    new Promise((resolve) => {
-      setTimeout(resolve, ms);
-    });
-
-  const cleanWrite = async (s) => {
-    setTimeout(() => {
-      if (s?.length > 0) {
-        setWrite(s.slice(0, s.length - 1));
-        cleanWrite(s.slice(0, s.length - 1));
-      }
-    }, 500);
-  };
-
-  async function makeALoopWait() {
-    for (let i = 0; i < data.length; i += 1) {
-      console.log(data[i]);
-      cleanWrite(data[i]);
-
-      await delay(data[i].length * 500);
-    }
-    makeALoopWait();
-  }
   useEffect(() => {
-    makeALoopWait();
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const close = {
-    "@media (max-width: 900px)": {
-      transform: "translateX(-150vw) rotate(90deg) translateY(30vh)",
-      transition: "all .7s ease-in",
-    },
-  };
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+    };
+  }, [isOpen]);
 
-  const open = {
-    "@media (max-width: 900px)": {
-      transform: "translateX(0rem)",
-      transition: "all .7s ease-out",
-    },
-  };
+  const navLinks = [
+    { id: "01", name: "About", target: "about" },
+    { id: "02", name: "Experience", target: "experience" },
+    { id: "03", name: "Projects", target: "projects" },
+  ];
 
-  const changeStyle = () => {
-    setCloseMenu(!closeMenu);
+  const handleNavClick = (target) => {
+    const element = document.getElementById(target);
+    if (element) {
+      const offset = 100;
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: target === "home" ? 0 : offsetPosition,
+        behavior: "smooth"
+      });
+    }
+    setIsOpen(false);
   };
 
   return (
-    <StyleRoot>
-      <div className={styles.main}>
-        <div className={styles.Navbar}>
-          <h1>
-            piyush.<span style={{ color: "red" }}>{write}</span>
-          </h1>
-
-          <div className={styles.hamburger}>
-            {!closeMenu ? (
-              <CgClose className={styles.open} onClick={changeStyle} />
-            ) : (
-              <RiMenu4Line className={styles.close} onClick={changeStyle} />
-            )}
-          </div>
+    <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ""} ${isOpen ? styles.navOpen : ""}`}>
+      <div className={`${styles.container} container`}>
+        <div className={styles.logo} onClick={() => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+          setIsOpen(false);
+        }}>
+          <span className={styles.prefix}>0x</span>PIYUSH<span className={styles.dot}>.SYS</span>
         </div>
 
-        <div className={styles.innersec} style={closeMenu ? close : open}>
-          <p>Home</p>
-          <p>Projects</p>
-          <p>About</p>
-          <button>Contact Me</button>
+        <div className={styles.desktopLinks}>
+          {navLinks.map((link) => (
+            <button key={link.name} onClick={() => handleNavClick(link.target)} className={styles.navItem}>
+              <span className={styles.linkId}>{link.id}</span>
+              {link.name}
+            </button>
+          ))}
+          <a href="mailto:piyushkumar2961@gmail.com" className={styles.contactBtn}>
+            INIT_CONTACT
+          </a>
+        </div>
+
+        <button className={styles.mobileToggle} onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? <RiCloseLine /> : <RiMenuLine />}
+        </button>
+      </div>
+
+      <div className={`${styles.mobileMenu} ${isOpen ? styles.menuOpen : ""}`}>
+        <div className={styles.mobileLinks}>
+          {navLinks.map((link, index) => (
+            <button 
+              key={link.name} 
+              onClick={() => handleNavClick(link.target)} 
+              className={styles.mobileNavItem}
+              style={{ transitionDelay: `${index * 0.1}s` }}
+            >
+              <span className={styles.mobileLinkId}>{link.id}</span>
+              {link.name}
+            </button>
+          ))}
+          <a 
+            href="mailto:piyushkumar2961@gmail.com" 
+            className={`${styles.mobileNavItem} text-accent`}
+            onClick={() => setIsOpen(false)}
+          >
+            INIT_CONTACT
+          </a>
+        </div>
+        <div className={styles.menuFooter}>
+          <RiCompassLine /> BENGALURU_IND
         </div>
       </div>
-    </StyleRoot>
+    </nav>
   );
 };
 
-export default Radium(Navbar);
+export default Navbar;
