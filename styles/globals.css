@@ -1,29 +1,256 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Schibsted+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  /* Color Palette - Engineered Backend */
+  --bg: oklch(18% 0.02 260);
+  --fg: oklch(95% 0.01 260);
+  --fg-muted: oklch(80% 0.01 260);
+  --fg-dim: oklch(60% 0.01 260);
+  
+  --accent: oklch(70% 0.25 250); /* Electric Cyan */
+  --accent-soft: oklch(70% 0.25 250 / 0.1);
+  --accent-bright: oklch(80% 0.2 250);
+  
+  --surface: oklch(22% 0.02 260);
+  --border: oklch(35% 0.02 260 / 0.3);
+  --border-hover: oklch(70% 0.25 250 / 0.4);
+  
+  /* Typography */
+  --font-heading: 'Unbounded', sans-serif;
+  --font-body: 'Schibsted Grotesk', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  /* Fluid Spacing */
+  --s-0: 0.5rem;
+  --s-1: clamp(1rem, 2vw, 1.5rem);
+  --s-2: clamp(2rem, 4vw, 3rem);
+  --s-3: clamp(4rem, 8vw, 6rem);
+  --s-4: clamp(6rem, 12vw, 10rem);
+  
+  --radius-sm: 0px; /* Sharp corners for engineered look */
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  
+  --container-max: 1400px;
+  
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --transition-fast: 0.2s var(--ease-out);
+  --transition-slow: 0.6s var(--ease-out);
+}
+
+* {
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  /* background-color: #efecff; */
-  /* background-color: #e5f8fc; */
-  background-color: #0f1111;
-  color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg);
+  cursor: crosshair;
+}
+
+html, body {
+  max-width: 100vw;
   overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg);
+  color: var(--fg);
+  line-height: 1.5;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* Typography Hierarchy */
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: clamp(2.5rem, 10vw, 8rem); font-weight: 900; }
+h2 { font-size: clamp(2rem, 6vw, 4.5rem); }
+h3 { font-size: clamp(1.25rem, 3vw, 2.2rem); }
+
+p {
+  font-size: clamp(0.95rem, 0.5vw + 1rem, 1.15rem);
+  color: var(--fg-muted);
+  max-width: 65ch;
+  line-height: 1.6;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+  transition: var(--transition-fast);
 }
 
-* {
-  box-sizing: border-box;
-  -webkit-tap-highlight-color: transparent;
+/* Layout Utilities */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--s-1);
 }
-@media (max-width: 900px){
-  .navbar {
-    position: -webkit-sticky;
-  position: sticky;
-  top: 0;
+
+.section {
+  padding: var(--s-3) 0;
+  border-bottom: 1px solid var(--border);
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: var(--s-2) 0;
   }
-
 }
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Global Elements */
+.grain {
+  position: fixed;
+  inset: -100%;
+  z-index: 999;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3%3Cfilter id='noiseFilter'%3%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.04;
+  pointer-events: none;
+  animation: noise 0.2s infinite;
+}
+
+@keyframes noise {
+  0% { transform: translate(0, 0); }
+  10% { transform: translate(-5%, -5%); }
+  20% { transform: translate(-10%, 5%); }
+  30% { transform: translate(5%, -10%); }
+  40% { transform: translate(-5%, 15%); }
+  50% { transform: translate(-10%, 5%); }
+  60% { transform: translate(15%, 0); }
+  70% { transform: translate(0, 10%); }
+  80% { transform: translate(-15%, 0); }
+  90% { transform: translate(10%, 5%); }
+  100% { transform: translate(5%, 0); }
+}
+
+/* Reveal Animations */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+}
+
+[data-reveal].revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--fg-dim);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Text Stroke Effect */
+.text-outline {
+  -webkit-text-stroke: 1px var(--fg-dim);
+  color: transparent;
+}
+
+.text-accent {
+  color: var(--accent);
+}
+
+.text-mono {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Button Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.85rem 1.75rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.8rem;
+  cursor: pointer;
+  border: 1px solid var(--fg);
+  background: transparent;
+  color: var(--fg);
+  transition: var(--transition-fast);
+  gap: 0.75rem;
+}
+
+.btn:hover {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+}
+
+.btn-primary {
+  background: var(--fg);
+  color: var(--bg);
+  border-color: var(--fg);
+}
+
+.btn-primary:hover {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+}
+
+/* Grid Dots Background */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(var(--border) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: -1;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+
+/* Hide Mobile Utility */
+@media (max-width: 768px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
