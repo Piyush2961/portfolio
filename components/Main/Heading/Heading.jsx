@@ -11,7 +11,7 @@ const Heading = () => {
           <div data-reveal className="stagger-1">
             <div className={styles.statusBadge}>
               <span className={styles.statusDot}></span>
-              <span className="text-mono">SYS.STATUS: OPTIMIZED // GOTO GROUP</span>
+              <span className="text-mono">{"SYS.STATUS: OPTIMIZED // GOTO GROUP"}</span>
             </div>
           </div>
           
@@ -58,7 +58,7 @@ const Heading = () => {
                 <div className={styles.imageLabel}>0x2961.SYS</div>
               </div>
               <div className={styles.location}>
-                <RiTerminalBoxLine /> BENGALURU // 12.9716° N, 77.5946° E
+                <RiTerminalBoxLine /> {"BENGALURU // 12.9716° N, 77.5946° E"}
               </div>
             </div>
           </div>

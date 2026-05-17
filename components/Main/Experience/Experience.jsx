@@ -56,7 +56,7 @@ const Experience = () => {
     <section id="experience" className="section">
       <div className="container">
         <div data-reveal className="stagger-1">
-          <span className="text-mono text-accent">// 02. TRAJECTORY</span>
+          <span className="text-mono text-accent">{"// 02. TRAJECTORY"}</span>
           <h2 className={styles.heading}>
             PROFESSIONAL <br />
             <span className="text-outline">HISTORY</span>

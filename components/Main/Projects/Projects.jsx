@@ -26,7 +26,7 @@ const Projects = () => {
     <section id="projects" className="section">
       <div className="container">
         <div data-reveal className="stagger-1">
-          <span className="text-mono text-accent">// 03. ARTIFACTS</span>
+          <span className="text-mono text-accent">{"// 03. ARTIFACTS"}</span>
           <h2 className={styles.heading}>
             TECHNICAL <br />
             <span className="text-outline">DEPLOYMENTS</span>

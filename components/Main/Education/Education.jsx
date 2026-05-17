@@ -24,7 +24,7 @@ const Education = () => {
     <section id="education" className="section">
       <div className="container">
         <div data-reveal className="stagger-1">
-          <span className="text-mono text-accent">// 04. ACADEMIC</span>
+          <span className="text-mono text-accent">{"// 04. ACADEMIC"}</span>
           <h2 className={styles.heading}>
             EDUCATION <br />
             <span className="text-outline">FOUNDATION</span>
@@ -54,7 +54,7 @@ const Education = () => {
 
         <div className={styles.awardsSection} data-reveal>
           <div className={styles.awardsHeader}>
-            <span className="text-mono text-accent">// RECOGNITION</span>
+            <span className="text-mono text-accent">{"// RECOGNITION"}</span>
           </div>
           <div className={styles.awardsGrid}>
             <div className={styles.awardItem}>

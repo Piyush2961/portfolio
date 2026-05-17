@@ -32,7 +32,7 @@ const About = () => {
         <div className={styles.grid}>
           <div className={styles.leftCol}>
             <div data-reveal className="stagger-1">
-              <span className="text-mono text-accent">// 01. PHILOSOPHY</span>
+              <span className="text-mono text-accent">{"// 01. PHILOSOPHY"}</span>
               <h2 className={styles.heading}>
                 SYSTEMS THAT <br />
                 <span className="text-outline">SCALES</span>

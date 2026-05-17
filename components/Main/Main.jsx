@@ -26,7 +26,7 @@ const Main = () => {
                 <RiTerminalLine /> INITIALIZE_HANDSHAKE
               </div>
               <h2 className={styles.footerHeading}>
-                LET'S BUILD <br />
+                LET&apos;S BUILD <br />
                 <span className="text-outline">THE FUTURE</span>
               </h2>
               <a href="mailto:piyushkumar2961@gmail.com" className={styles.largeEmail}>
